@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block content %}
+<div class="container text-center">
+    <div class="row">
+        <div class="col-7">
+            <p>
+                {% if user.image_url %}<img
+                    src="{{ user.image_url }}"
+                    alt=""
+                    width="450"
+                />
+                {% else %}
+                <img
+                    src="https://static.vecteezy.com/system/resources/thumbnails/002/534/006/small/social-media-chatting-online-blank-profile-picture-head-and-body-icon-people-standing-icon-grey-background-free-vector.jpg"
+                    alt=""
+                    width="450"
+                />
+                {% endif %}
+            </p>
+            <h2>{{ user.first_name}} {{ user.last_name }}</h2>
+            <br />
+            <a href="/users/{{ user.id }}/edit" class="btn btn-info"
+                >Edit user</a
+            >
+            <a href="/users/{{ user.id }}/delete" class="btn btn-warning"
+                >Delete user</a
+            >
+        </div>
+        <div class="col-5">
+            <ul>
+                <h3 class="display-3">Posts</h3>
+                {% if posts %} {% for post in posts %}
+                <li><a href="/posts/{{ post.id }}">{{ post.title }}</a></li>
+                {% endfor %} {% else %}
+                <div>This user has no posts</div>
+                {% endif %}
+            </ul>
+            <a href="/users/{{ user.id }}/new-post" class="btn btn-primary"
+                >Add Post</a
+            >
+        </div>
+    </div>
+</div>
+{% endblock %}

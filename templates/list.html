@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8 bg-secondary-subtle">
+            <ul>
+                {% for user in users %}
+                <li>
+                    <a href="/users/{{ user.id }}">
+                        <img
+                            src="{{
+			user.image_url }}"
+                            height="50px"
+                        />{{ user.first_name }} {{ user.last_name }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            <a href="/add-new-user">Add a New User</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

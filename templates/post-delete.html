@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+    <form action="/posts/{{ post.id }}/delete" method="POST">
+        <h2>Are you sure?</h2>
+        <button type="submit" formmethod="post" class="btn btn-primary">
+            Delete
+        </button>
+        <button
+            type="submit"
+            formaction="/posts/{{ post.id }}"
+            formmethod="get"
+            class="btn btn-success"
+        >
+            GO BACK
+        </button>
+    </form>
+</div>
+{% endblock %}

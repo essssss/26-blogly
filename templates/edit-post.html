@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+    <h3 class="display-3">Add New Post</h3>
+    <form action="/posts/{{ post.id }}" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input
+                type="text"
+                class="form-control"
+                id="title"
+                name="title"
+                placeholder="{{ post.title }}"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">Content</label>
+            <textarea
+                class="form-control"
+                name="content"
+                rows="3"
+                placeholder="{{ post.content }}"
+            ></textarea>
+        </div>
+        <button
+            type="submit"
+            formmethod="post"
+            formaction="/posts/{{ post.id }}"
+            class="btn btn-primary"
+        >
+            Submit
+        </button>
+        <a href="/posts/{{ post.id }}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
