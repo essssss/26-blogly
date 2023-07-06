@@ -13,10 +13,22 @@ Post.query.delete()
 
 # sample users
 u1 = User(first_name="John", last_name="Johnson")
-u2 = User(first_name="George", last_name="Washington")
-u3 = User(first_name="Regina", last_name="Spektor")
+u2 = User(
+    first_name="George",
+    last_name="Washington",
+    image_url="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg/800px-Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg",
+)
+u3 = User(
+    first_name="Regina",
+    last_name="Spektor",
+    image_url="https://image.shutterstock.com/image-photo/stock-photo-image-of-young-asian-woman-company-worker-in-glasses-smiling-and-holding-digital-tablet-standing-250nw-2122700972.jpg",
+)
 u4 = User(first_name="Lucy", last_name="DellaVecchia")
-u5 = User(first_name="Finn", last_name="Huckleberry")
+u5 = User(
+    first_name="Finn",
+    last_name="Huckleberry",
+    image_url="https://historicmissourians.shsmo.org/wp-content/uploads/2021/03/MarkTwain-main_crop.jpg",
+)
 
 
 db.session.add_all([u1, u2, u3, u4, u5])

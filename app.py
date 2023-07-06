@@ -76,7 +76,7 @@ def show_delete_confirmation(user_id):
     """request confirmation to delete user"""
     user = User.query.get_or_404(user_id)
 
-    return render_template("delete.html", user=user)
+    return render_template("delete-user.html", user=user)
 
 
 @app.route("/users/<int:user_id>/delete", methods=["POST"])
